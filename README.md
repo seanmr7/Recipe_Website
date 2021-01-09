@@ -1,3 +1,3 @@
 # README
 
-Recipe a day website
+A site to submit, save, and share recipes.
