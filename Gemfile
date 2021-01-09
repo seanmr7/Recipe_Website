@@ -40,6 +40,9 @@ gem 'bootstrap', '~>5.0.0.beta1'
 # Add jquery-rails gem for Bootstrap
 gem 'jquery-rails'
 
+# Use Font-Awesome for icons and logo
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
