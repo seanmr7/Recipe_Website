@@ -21,13 +21,12 @@ h1, h2, h3 {
  }
 
  // Navbar styles
- .navbar-nav > li > a {
-  color: white;
-  text-decoration: none;
-}
+ .navbar-dark .navbar-nav .nav-link {
+   color: white;
+ }
 
 .navbar {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 // Use custom nav-bar toggle icon to match font color.
