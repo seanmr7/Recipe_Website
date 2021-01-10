@@ -20,11 +20,16 @@ h1, h2, h3 {
    font-family: 'Arimo', sans-serif;
  }
 
- // Home Page Styles
+ // Navbar styles
  .navbar-nav > li > a {
   color: white;
   text-decoration: none;
 }
+
+.navbar {
+  margin-bottom: 20px;
+}
+
 // Use custom nav-bar toggle icon to match font color.
 .custom-toggler.navbar-toggler {
   border-color: white;
