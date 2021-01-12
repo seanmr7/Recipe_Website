@@ -1,4 +1,11 @@
 <%= form_for @profile, url: user_profile_path do |f| %>
+  
+
+  <div class="field mb-3">
+    <%= f.label :avatar, "Profile Image", class: "form-label" %>
+    <%= f.file_field :avatar, class: "form-control" %>
+  </div>
+  
   <div class="field mb-3">
     <%= f.label :first_name, class: "form-label" %>
     <%= f.text_field :first_name, class: "form-control" %>
