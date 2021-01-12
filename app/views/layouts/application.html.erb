@@ -46,8 +46,15 @@
         <%= content_tag :div, msg, class: "alert alert-#{type}" %>
       <% end %>
     </div>
-    <div id="main-content">
-      <%= yield %>
-    </div>
+      <div class="container-fluid">
+        <div class="row">
+          <% if user_signed_in? %>
+            <%= render "users/sidebar" %>
+          <% end %>
+          <div class="col-md-10 offset-md-2">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
   </body>
 </html>
