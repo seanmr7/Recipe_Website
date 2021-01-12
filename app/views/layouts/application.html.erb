@@ -41,20 +41,11 @@
       </div>
     </nav>
 
-    <div class="container flash-container">
+    <div class="container flash-container flash-message">
       <% flash.each do |type, msg|  %> <!-- flash[:key] access flash hash -->
         <%= content_tag :div, msg, class: "alert alert-#{type}" %>
       <% end %>
     </div>
-      <div class="container-fluid">
-        <div class="row">
-          <% if user_signed_in? %>
-            <%= render "users/sidebar" %>
-          <% end %>
-          <div class="col-md-10 offset-md-2">
-            <%= yield %>
-          </div>
-        </div>
-      </div>
+    <%= yield %>   
   </body>
 </html>

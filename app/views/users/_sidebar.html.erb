@@ -1,9 +1,11 @@
-<div class="col-md-2 side-profile">
-  <img src="https://thumbs.dreamstime.com/z/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg" class="profile-picture">
-  <h4><%= current_user.profile.first_name%> <%= current_user.profile.last_name %></h4>
-  <h5><%= current_user.profile.username %></h5>
-  <p>
-    <%= link_to "Profile Page", user_path(id: current_user.id)%> |
-    <%= link_to "Update Profile", edit_user_profile_path(user_id: current_user.id) %>
-  </p>
-</div>
+<% if current_user.profile %>
+  <div class="col-md-2 side-profile">
+    <img src="https://thumbs.dreamstime.com/z/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg" class="profile-picture">
+    <h4><%= current_user.profile.first_name%> <%= current_user.profile.last_name %></h4>
+    <h5><%= current_user.profile.username %></h5>
+    <p>
+      <%= link_to "Profile Page", user_path(id: current_user.id)%> |
+      <%= link_to "Update Profile", edit_user_profile_path(user_id: current_user.id) %>
+    </p>
+  </div>
+<% end %>

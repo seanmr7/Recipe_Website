@@ -1,3 +1,11 @@
-
-<h1>Your Recipes<h1>
+<div class="container-fluid">
+  <div class="row">
+    <% if user_signed_in? %>
+      <%= render "users/sidebar" %>
+    <% end %>
+    <div class="col-md-10 offset-md-2">
+      <h1>Your Recipes<h1>
+    </div>
+  </div>
+</div>
    
