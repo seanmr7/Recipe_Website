@@ -1,11 +1,25 @@
 <div class="container-fluid">
   <div class="row">
-    <% if user_signed_in? %>
-      <%= render "users/sidebar" %>
-    <% end %>
-    <div class="col-md-10 offset-md-2">
-      <h1>Your Recipes<h1>
+    <div class="col-md-2 side-profile">
+        <%= render "users/sidebar" %>
     </div>
+    <div class="col-md-8 offset-md-2">
+      <h1>Your Recipes<h1>
+      <ul class="list-group">
+        <% @user.recipes.each do |recipe| %>
+          <li class="list-group-item">
+            <%= link_to user_recipe_path(user_id: @user.id, id: recipe.id) do %>
+              <%= recipe.name %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-md-2">
+      <h1>Upcoming Recipes</h1>
+    </div>
+
   </div>
 </div>
    

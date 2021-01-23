@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-
+before_action :only_current_user, only: [:new, :create, :edit, :update, :destroy]
 # GET /recipes
 # GET /recipes.json
 def index
@@ -76,5 +76,13 @@ private
   # Only allow a list of trusted parameters through.
   def recipe_params
     params.require(:recipe).permit(:name, :description, :rating, :user_id, ingredients: [])
+  end
+
+  # Only allow logged in user to create, update, and destroy recipes
+  def only_current_user
+    @user = User.find(params[:user_id])
+    if @user.profile && !(@user == current_user)
+      redirect_to(root_path)
+    end
   end
 end

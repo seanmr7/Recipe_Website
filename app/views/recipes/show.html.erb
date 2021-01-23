@@ -8,4 +8,4 @@
 <% end %>
 
 <%= link_to 'Edit', edit_user_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%= link_to 'Back', user_path(id: params[:user_id]) %>
