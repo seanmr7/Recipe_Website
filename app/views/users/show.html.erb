@@ -7,7 +7,6 @@
       <h1>Your Recipes</h1>
       <ul class="list-group">
         <% @user.recipes.each do |recipe| %>
-          
           <li class="list-group-item list-group-item-secondary">
             <h2>
               <%= link_to recipe.name, user_recipe_path(user_id: @user.id, id: recipe.id), class: "recipe-title" %>
@@ -17,7 +16,6 @@
               <%= link_to "Delete", user_recipe_path(user_id: @user.id, id: recipe.id), method: :delete, class: "btn btn-danger" %>
             </p>
           </li>
-          
         <% end %>
       </ul>
     </div>

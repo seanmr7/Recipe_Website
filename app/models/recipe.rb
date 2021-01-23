@@ -2,7 +2,8 @@ class Recipe < ApplicationRecord
 	belongs_to :user
 	validates :name, presence: true
 	validates :ingredients, presence: true
-	before_save :normalize_ingredients
+	serialize :ingredients
+	#before_save :normalize_ingredients
 
 	private
 

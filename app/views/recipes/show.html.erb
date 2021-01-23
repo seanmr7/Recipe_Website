@@ -1,8 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 side-profile">
+      <%= render "users/sidebar" %>
+    </div>
+    <div class="col-md-8 offset-md-2">
+      <h1><%= @recipe.name %></h1>
+      <p><%= @recipe.description %></p>
+      <%= @recipe.ingredients %>
+      <ul>
+        <% @recipe.ingredients.split(",").each do |ingredient| %>
+          <li><%= ingredient %><li>
+        <% end %>
+      <ul>
 
 
-<%= @recipe.name %>
-<%= @recipe.ingredients %>
-
-
-<%= link_to 'Edit', edit_user_recipe_path(user_id: params[:user_id], id: @recipe) %> |
-<%= link_to 'Back', user_path(id: params[:user_id]) %>
+      <%= link_to 'Edit', edit_user_recipe_path(user_id: params[:user_id], id: @recipe) %> |
+      <%= link_to 'Back', user_path(id: params[:user_id]) %>
+    </div>
+  </div>
+</div>
