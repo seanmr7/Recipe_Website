@@ -19,11 +19,13 @@ end
 
 # GET /recipes/new
 def new
+  @user = User.find(params[:user_id])
   @recipe = Recipe.new
 end
 
 # GET /recipes/1/edit
 def edit
+  @user = User.find(params[:user_id])
 end
 
 # POST /recipes
@@ -75,7 +77,7 @@ private
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :rating, :user_id, ingredients: [])
+    params.require(:recipe).permit(:name, :description, :rating, :user_id, :ingredients)
   end
 
   # Only allow logged in user to create, update, and destroy recipes
