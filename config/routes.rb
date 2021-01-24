@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users do
     resource :profile
     resources :recipes
-    get 'user_recipes', to: 'recipes#user_recipes'
+    get 'all_recipes', to: 'recipes#user_recipes'
   end
 end
