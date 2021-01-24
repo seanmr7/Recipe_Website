@@ -3,8 +3,8 @@ class Recipe < ApplicationRecord
 	validates :name, presence: true
 	#validates :ingredients, presence: true
 	#validates :instructions, presence: true
-	serialize :ingredients
-	serialize :instructions
+	#serialize :ingredients
+	#serialize :instructions
 	before_save :normalize_ingredients
 
 	private
