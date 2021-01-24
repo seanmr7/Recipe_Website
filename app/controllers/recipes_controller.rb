@@ -26,6 +26,7 @@ end
 # GET /recipes/1/edit
 def edit
   @user = User.find(params[:user_id])
+  @date_options = generate_date_options()
 end
 
 # POST /recipes
@@ -77,7 +78,15 @@ private
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :rating, :user_id, :ingredients)
+    params.require(:recipe).permit(
+      :name, 
+      :description, 
+      :rating, 
+      :user_id, 
+      :cook_by_date, 
+      :ingredients, 
+      :instructions
+    )
   end
 
   # Only allow logged in user to create, update, and destroy recipes
@@ -87,4 +96,5 @@ private
       redirect_to(root_path)
     end
   end
+
 end

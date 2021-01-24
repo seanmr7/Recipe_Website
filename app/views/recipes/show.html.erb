@@ -12,6 +12,8 @@
           <li><%= ingredient %><li>
         <% end %>
       <ul>
+      <%= @recipe.instructions %>
+      <%= @recipe.cook_by_date %>
 
 
       <%= link_to 'Edit', edit_user_recipe_path(user_id: params[:user_id], id: @recipe) %> |
