@@ -65,7 +65,7 @@ end
 def destroy
   @recipe.destroy
   respond_to do |format|
-    format.html { redirect_to user_path(user_id: current_user.id), notice: 'Recipe was successfully destroyed.' }
+    format.html { redirect_to user_path(id: current_user.id), notice: 'Recipe was successfully destroyed.' }
     format.json { head :no_content }
   end
 end
