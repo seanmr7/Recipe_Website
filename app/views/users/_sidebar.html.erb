@@ -1,5 +1,7 @@
-<% if current_user.profile.avatar %>
+<% if current_user.profile.avatar.attached? %>
   <%= image_tag url_for(current_user.profile.avatar), class: "profile-picture rounded-circle"%>
+<% else %>
+  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="profile-picture rounded-circle">
 <% end %>
 <h4><%= current_user.profile.first_name%> <%= current_user.profile.last_name %></h4>
 <h5><%= current_user.profile.username %></h5>
