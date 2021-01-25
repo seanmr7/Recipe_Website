@@ -5,6 +5,11 @@
     </div>
     <div class="col-md-8 offset-md-2">
       <h1><%= @recipe.name %></h1>
+      <% if @recipe.user == current_user %>
+        <p>Your Recipe</p>
+      <% else %>
+        <p>Added by <%= @recipe.user.profile.username %></p>
+      <% end %>
       <% if @recipe.cook_by_date %>
         <p>Cook on:<%= @recipe.cook_by_date %></p>
       <% end %>
