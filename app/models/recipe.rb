@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  has_many :tag_maps
+  has_many :tags, through: :tag_maps
   validates :name, presence: true
   validates :ingredients, presence: true
   validates :instructions, presence: true
