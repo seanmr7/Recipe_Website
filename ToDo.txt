@@ -1,7 +1,7 @@
 Recipes
-  > Revise ingredients storage so that it can be listed on view in a more readable way.
-  > Revise instructions storage so that it can be listed on view in a readable way.
-  > Add bootstrap and formatting to recipe show view.
+  Done > Revise ingredients storage so that it can be listed on view in a more readable way.
+  Done > Revise instructions storage so that it can be listed on view in a readable way.
+  Done > Add bootstrap and formatting to recipe show view.
   > Add tags and ratings to recipes. Allow user to filter recipe index by tags.
   > Add comments to recipes model, view, controller.
 
@@ -11,3 +11,4 @@ Overall
   > Add email alert for users upcoming to cook recipes. Include ingredient list as shopping list, link to the recipe,
     and date they wanted to cook it.
   > Move flash popup so that it is not hidden by the profile sidebar and does not cover the page information.
+  > Fix profile picture being too large.
