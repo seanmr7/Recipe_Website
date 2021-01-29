@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :recipes
     get 'all_recipes', to: 'recipes#user_recipes'
   end
+  resources :tags
 end

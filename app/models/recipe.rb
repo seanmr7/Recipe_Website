@@ -1,13 +1,26 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :tag_maps
-  has_many :tags, through: :tag_maps
+  has_many :taggings
+  has_many :tags, through: :taggings
+
   validates :name, presence: true
   validates :ingredients, presence: true
   validates :instructions, presence: true
   #before_save :normalize_ingredients, :normalize_instructions
   serialize :ingredients
   serialize :instructions
+
+  def tag_list=(tags_string)
+    tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
+    new_or_found_tags = tag_names.collect do |name| 
+      Tag.find_or_create_by(tag_name: name)
+    end
+    self.tags = new_or_found_tags
+  end
+
+  def tag_list
+    tags.join(", ")
+  end
 
   private
 
@@ -19,13 +32,5 @@ class Recipe < ApplicationRecord
       self.instructions = self.instructions.split("\r\n").each { |string| string.strip }
     end
 
-    def tag_list=(tags_string)
-      tag_names = tags_string.split(",").collect { |string| s.strip.downcase }.uniq
-      new_and_found_tags = tag_names.collect { |tag_name| Tag.find_or_create_by(tag_name: tag_name) }
-      self.tags = new_and_found_tags
-    end
 
-    def tag_list
-      tags.join(",")
-    end
 end

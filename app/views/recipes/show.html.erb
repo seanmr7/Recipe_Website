@@ -4,7 +4,7 @@
       <%= render "users/sidebar" %>
     </div>
     <div class="col-md-8 offset-md-2">
-      <h1><%= @recipe.name %></h1>
+      <h1><%= @recipe.name %></h1> <%= @recipe.tags.each { |tag| tag.tag_name } %>
       <% if @recipe.user == current_user %>
         <p>Your Recipe</p>
       <% else %>
