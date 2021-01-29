@@ -19,7 +19,7 @@ class Recipe < ApplicationRecord
       self.instructions = self.instructions.split("\r\n").each { |string| string.strip }
     end
 
-    def tag_list = (tags_string)
+    def tag_list=(tags_string)
       tag_names = tags_string.split(",").collect { |string| s.strip.downcase }.uniq
       new_and_found_tags = tag_names.collect { |tag_name| Tag.find_or_create_by(tag_name: tag_name) }
       self.tags = new_and_found_tags

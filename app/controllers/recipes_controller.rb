@@ -83,7 +83,8 @@ private
       :description, 
       :rating, 
       :user_id, 
-      :cook_by_date, 
+      :cook_by_date,
+      :tag_list,
       :ingredients, 
       :instructions
     )
