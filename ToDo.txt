@@ -12,3 +12,4 @@ Overall
     and date they wanted to cook it.
   > Move flash popup so that it is not hidden by the profile sidebar and does not cover the page information.
   > Fix profile picture being too large.
+  >Add eager loading for optimization
