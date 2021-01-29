@@ -8,6 +8,7 @@ class Recipe < ApplicationRecord
   #before_save :normalize_ingredients, :normalize_instructions
   serialize :ingredients
   serialize :instructions
+
   private
 
     def normalize_ingredients
@@ -16,5 +17,15 @@ class Recipe < ApplicationRecord
 
     def normalize_instructions
       self.instructions = self.instructions.split("\r\n").each { |string| string.strip }
+    end
+
+    def tag_list = (tags_string)
+      tag_names = tags_string.split(",").collect { |string| s.strip.downcase }.uniq
+      new_and_found_tags = tag_names.collect { |tag_name| Tag.find_or_create_by(tag_name: tag_name) }
+      self.tags = new_and_found_tags
+    end
+
+    def tag_list
+      tags.join(",")
     end
 end
