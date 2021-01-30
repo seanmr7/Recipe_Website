@@ -5,17 +5,26 @@
       <li class="list-group-item <%=cycle "list-group-item", "list-group-item-secondary" %>">
         <div class="container-fluid home-page-recipes">
           <div class="row">
-            <div class="col-md-9 align-self-center">
+            <div class="col-md-10 align-self-center">
               <h2><%= link_to recipe.name, user_recipe_path(user_id: recipe.user.id, id: recipe.id) %></h2>
-              <% recipe.tags.each do |tag| %>
-                <%= link_to user_related_recipes_path(user_id: recipe.user.id, id: tag.id, recipe_id: recipe.id), class: "tag-anchor" do %>
-                  <span class="badge rounded-pill tags-background"><%= tag.tag_name %></span>
+              <div>
+                <% recipe.tags.each do |tag| %>
+                  <%= link_to user_related_recipes_path(user_id: recipe.user.id, id: tag.id, recipe_id: recipe.id), class: "tag-anchor" do %>
+                    <span class="badge rounded-pill tags-background"><%= tag.tag_name %></span>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </div>
             </div>
-            <div class="col-md-3 align-self-center">
-              Added by: <%= link_to recipe.user.profile.username, root_path %>
-            </div>
+            <% if current_user.id == recipe.user.id %>
+              <div class="col-md-2 align-self-center">
+                <%= link_to "Edit", edit_user_recipe_path(user_id: current_user.id, id: recipe.id), class: "btn btn-success align-middle" %>
+                <%= link_to "Delete", user_recipe_path(user_id: current_user.id, id: recipe.id), method: :delete, class: "btn btn-danger align-middle" %>
+              </div>
+            <% else %>
+              <div class="col-md-2 align-self-center">
+                Added by: <%= link_to recipe.user.profile.username, root_path %>
+              </div>
+            <% end %>
           </div>
         </div>
       </li>

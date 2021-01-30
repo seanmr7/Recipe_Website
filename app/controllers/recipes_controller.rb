@@ -26,7 +26,6 @@ end
 # GET /recipes/1/edit
 def edit
   @user = User.find(params[:user_id])
-  @date_options = generate_date_options()
 end
 
 # POST /recipes
