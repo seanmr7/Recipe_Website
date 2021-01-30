@@ -1,5 +1,5 @@
 
-<h1>Recent Recipes</h1>
+
 <ul class="list-group list-group-flush">
   <% @recipes.each do |recipe| %>
       <li class="list-group-item <%=cycle "list-group-item", "list-group-item-secondary" %>">
@@ -8,7 +8,7 @@
             <div class="col-md-9 align-self-center">
               <h2><%= link_to recipe.name, user_recipe_path(user_id: recipe.user.id, id: recipe.id) %></h2>
               <% recipe.tags.each do |tag| %>
-                <%= link_to "/", class: "tag-anchor" do %>
+                <%= link_to user_related_recipes_path(user_id: recipe.user.id, id: tag.id, recipe_id: recipe.id), class: "tag-anchor" do %>
                   <span class="badge rounded-pill tags-background"><%= tag.tag_name %></span>
                 <% end %>
               <% end %>

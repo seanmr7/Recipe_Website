@@ -1,3 +1,14 @@
-<h1>Your Recipes Tagged with <%= @tag.tag_name %></h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 side-profile">
+        <%= render "users/sidebar" %>
+    </div>
 
-<%= @recipes.each { |recipe| recipe.name} %>
+    <div class="col-md-8 offset-md-2">
+      <h1>Your Recipes Tagged with <%= @tag.tag_name.capitalize %></h1>
+
+      <%= render "recipes/index"%>
+
+    </div>
+  </div>
+</div>
