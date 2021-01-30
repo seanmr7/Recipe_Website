@@ -12,8 +12,13 @@
               <%= link_to recipe.name, user_recipe_path(user_id: @user.id, id: recipe.id), class: "recipe-title" %>
             </h2>
             <p class="list-p">
-              <%= link_to "Edit", edit_user_recipe_path(user_id: @user.id, id: recipe.id), class: "btn btn-success" %>
-              <%= link_to "Delete", user_recipe_path(user_id: @user.id, id: recipe.id), method: :delete, class: "btn btn-danger" %>
+              <%= link_to "Edit", edit_user_recipe_path(user_id: @user.id, id: recipe.id), class: "btn btn-success align-middle" %>
+              <%= link_to "Delete", user_recipe_path(user_id: @user.id, id: recipe.id), method: :delete, class: "btn btn-danger align-middle" %>
+              <% recipe.tags.each do |tag| %>
+                <%= link_to user_related_recipes_path(user_id: recipe.user.id, id: tag.id, recipe_id: recipe.id), class: "tag-anchor align-middle" do %>
+                  <span class="btn badge rounded-pill tags-background"><%= tag.tag_name %></span>
+                <% end %>
+              <% end %>
             </p>
           </li>
         <% end %>
