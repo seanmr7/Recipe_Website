@@ -6,7 +6,12 @@
         <div class="container-fluid home-page-recipes">
           <div class="row">
             <div class="col-md-9 align-self-center">
-              <h3><%= link_to recipe.name, user_recipe_path(user_id: recipe.user.id, id: recipe.id) %></h3>
+              <h2><%= link_to recipe.name, user_recipe_path(user_id: recipe.user.id, id: recipe.id) %></h2>
+              <% recipe.tags.each do |tag| %>
+                <%= link_to "/", class: "tag-anchor" do %>
+                  <span class="badge rounded-pill tags-background"><%= tag.tag_name %></span>
+                <% end %>
+              <% end %>
             </div>
             <div class="col-md-3 align-self-center">
               Added by: <%= link_to recipe.user.profile.username, root_path %>
