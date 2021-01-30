@@ -7,7 +7,7 @@
       <h1><%= @recipe.name %></h1> 
 
       <% @recipe.tags.each do |tag| %>
-        <%= link_to "/", class: "tag-anchor" do %>
+        <%= link_to user_related_recipes_path(user_id: @recipe.user.id, id: tag.id, recipe_id: @recipe.id), class: "tag-anchor" do %>
           <span class="badge rounded-pill tags-background"><%= tag.tag_name %></span>
         <% end %>
       <% end %>

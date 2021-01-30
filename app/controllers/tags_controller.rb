@@ -5,8 +5,9 @@ class TagsController < ApplicationController
   end
 
   def user_related_recipes
-    #@tag = Tag.find(params[:id])
-    #@recipes = Recipe.join(:taggings).where('recipes.id != ?', @recipes.id).where(taggings: { tag_id: @article.tag_ids })
+    @tag = Tag.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipes = Recipe.joins(:taggings).where('recipes.id != ?', @recipe.id).where(taggings: { tag_id: @tag.id })
   end
 
   def new
