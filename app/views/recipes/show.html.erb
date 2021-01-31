@@ -7,12 +7,18 @@
       <h1><%= @recipe.name %></h1> 
 
       <% @recipe.tags.each do |tag| %>
-        <%= link_to user_related_recipes_path(user_id: @recipe.user.id, id: tag.id, recipe_id: @recipe.id), class: "tag-anchor" do %>
-          <span class="badge rounded-pill tags-background"><%= tag.tag_name %></span>
+        <% if user_signed_in? %>
+          <%= link_to related_recipes_path(user_id: current_user.id, id: tag.id, recipe_id: @recipe.id), class: "tag-anchor" do %>
+            <span class="badge rounded-pill tags-background"><%= tag.tag_name %></span>
+          <% end %>
+        <% else %>
+          <%= link_to related_recipes_path(id: tag.id, recipe_id: @recipe.id), class: "tag-anchor" do %>
+            <span class="badge rounded-pill tags-background"><%= tag.tag_name %>
+          <% end %>
         <% end %>
       <% end %>
         
-      <% if @recipe.user == current_user %>
+      <% if user_signed_in? && @recipe.user == current_user %>
         <p>Your Recipe</p>
       <% else %>
         <p>Added by <%= @recipe.user.profile.username %></p>
@@ -20,8 +26,7 @@
       <% if @recipe.cook_by_date %>
         <p>Cook on: <%= @recipe.cook_by_date.strftime("%A %m/%d/%Y") %></p>
       <% end %>
-      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      <%= @recipe.description %></p>
+      <p><%= @recipe.description %></p>
       
       <h3>Ingredients</h3>
       <ul class="list-group list-group-flush">

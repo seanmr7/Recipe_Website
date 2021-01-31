@@ -7,9 +7,7 @@ Rails.application.routes.draw do
     resource :profile
     resources :recipes
     get 'all_recipes', to: 'recipes#user_recipes'
-    get 'related_recipes', to: 'tags#user_related_recipes'
-    
   end
   resources :tags
-  
+  get 'related_recipes', to: 'tags#related_recipes'
 end

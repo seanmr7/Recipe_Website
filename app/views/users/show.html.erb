@@ -5,8 +5,9 @@
     </div>
     <div class="col-md-8 offset-md-2">
       <h1>Your Recipes</h1>
-
-      <%= render "recipes/index" %>
+      <ul class="list-group list-group-flush">
+        <%= render partial: "recipes/recipe_list", collection: @recipes, as: :recipe %>
+      </ul>
     </div>
 
     <div class="col-md-2">

@@ -10,6 +10,8 @@ class Recipe < ApplicationRecord
   serialize :ingredients
   serialize :instructions
 
+  scope :user_recipes, -> user_id { where("user_id = ?", user_id)}
+
   def tag_list=(tags_string)
     tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
     new_or_found_tags = tag_names.collect do |name| 
