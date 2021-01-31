@@ -6,27 +6,42 @@
 
     <div class="col-md-8 offset-md-2">
       <h1>Recipes Tagged with <%= @tag.tag_name.capitalize %></h1>
-      <p>
-        <button class="btn btn-primary" 
-                type="button" 
-                data-toggle="collapse" 
-                data-target="#collapseExample" 
-                aria-expanded="false" 
-                aria-controls="collapseExample">
-          Button with data-target
-        </button>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <ul class="list-group list-group-flush">
-          <%= render partial: "recipes/recipe_list", collection: @recipes, as: :recipe%>
-        </ul>
+      <div id="myGroup">
+        <p>
+          <button class="btn btn-primary" 
+                  type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#userRecipes" 
+                  aria-expanded="false" 
+                  aria-controls="userRecipes">
+            Your Recipes
+          </button>
+          <button class="btn btn-primary" 
+                  type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#allRecipes" 
+                  aria-expanded="false" 
+                  aria-controls="allRecipes">
+            All Recipes
+          </button>
+        </p>
+      
+        <div class="collapse show" id="userRecipes" data-bs-parent="#myGroup">
+          <% if @user_recipes.empty? %>
+          <p>You don't have any recipes tagged with <%= @tag.tag_name %>
+          <% else %>
+            <ul class="list-group list-group-flush">
+              <%= render partial: "recipes/recipe_list", collection: @user_recipes, as: :recipe%>
+            </ul>
+          <% end %>
+        </div>
+        <div class="collapse multi-collapse" id="allRecipes" data-bs-parent="#myGroup">
+          <ul class="list-group list-group-flush">
+            <%= render partial: "recipes/recipe_list", collection: @recipes, as: :recipe %>
+          </ul>
+        </div>
       </div>
+      
     </div>
   </div>
 </div>
-
-<script>
-  $(document).ready(function () {
-      $('.data-toggle').collapse();
-  });
-</script>

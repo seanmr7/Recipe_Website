@@ -11,15 +11,19 @@
 // about supported directives.
 //
 //
-//= require rails-ujs
 //= require jquery3
-//= require turbolinks
-//= require bootstrap-sprockets
-//= require activestorage
 //= require popper
+//= require bootstrap-sprockets
+//= require rails-ujs
+//= require turbolinks
+//= require activestorage
 //= require_tree .
 
 // Fade out alert messages
 $(document).on('turbolinks:load', function(){
   $('.alert').delay(1000).fadeOut(3500);
-})
+});
+
+jQuery('button').click( function(e) {
+  jQuery('.collapse').collapse('hide');
+});
