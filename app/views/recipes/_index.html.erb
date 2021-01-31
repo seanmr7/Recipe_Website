@@ -15,7 +15,7 @@
                 <% end %>
               </div>
             </div>
-            <% if current_user.id == recipe.user.id %>
+            <% if user_signed_in? && current_user.id == recipe.user.id %>
               <div class="col-md-2 align-self-center">
                 <%= link_to "Edit", edit_user_recipe_path(user_id: current_user.id, id: recipe.id), class: "btn btn-success align-middle" %>
                 <%= link_to "Delete", user_recipe_path(user_id: current_user.id, id: recipe.id), method: :delete, class: "btn btn-danger align-middle" %>

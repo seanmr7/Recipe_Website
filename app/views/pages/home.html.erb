@@ -4,14 +4,12 @@
       <div class="col-md-2 side-profile">
         <%= render "users/sidebar" %>
       </div>
+      <% end %>
       <div class="col-md-8 offset-md-2">
         <h1>Welcome to the Home Page</h1>
         <h1>Recent Recipes</h1>
         <%= render "recipes/index"%>
+        <%= link_to "View all recipes", recipes_path %>
       </div>
-      
-    <% else %>
-      <h1>Welcome to the Home Page</h1>
-    <% end %>
   </div>
 </div>
