@@ -9,8 +9,9 @@
 }
 
 .profile-picture {
-  height: 256px;
-  width: 256px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   margin: auto;
   padding-bottom: 15px;
   display: block;
