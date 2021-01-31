@@ -4,12 +4,12 @@ before_action :only_current_user, only: [:new, :create, :edit, :update, :destroy
 # GET /recipes
 # GET /recipes.json
 def index
-  @recipes = Recipe.all
+  @recipes = Recipe.all.includes(:tags, :user)
 end
 
 def user_recipes
   @user = User.find(params[:user_id])
-  @recipes = @user.recipes
+  @recipes = @user.recipes.includes(:tags)
 end
 
 # GET /recipes/1
