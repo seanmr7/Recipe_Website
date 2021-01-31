@@ -22,7 +22,9 @@
               </div>
             <% else %>
               <div class="col-md-2 align-self-center">
-                Added by: <%= link_to recipe.user.profile.username, root_path %>
+                <%= link_to root_path, class: "btn btn-info align middle" do %>
+                  Added by: <%= recipe.user.profile.username %>
+                <%end %>
               </div>
             <% end %>
           </div>
