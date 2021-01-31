@@ -11,9 +11,10 @@ Overall
   > Add user index so users can find and view other user profiles.
   > Add email alert for users upcoming to cook recipes. Include ingredient list as shopping list, link to the recipe,
     and date they wanted to cook it.
-  > Move flash popup so that it is not hidden by the profile sidebar and does not cover the page information.
-  > Fix profile picture being too large.
+  Done > Move flash popup so that it is not hidden by the profile sidebar and does not cover the page information.
+  Done > Fix profile picture being too large.
   > Add eager loading for optimization
+  Done > Add placeholder text for recipe form
 
 From Mishu
   > "Mishu's Recipes" header on profile page

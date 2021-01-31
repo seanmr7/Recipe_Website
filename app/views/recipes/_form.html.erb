@@ -13,27 +13,27 @@
 
   <div class="field mb-3">
     <%= f.label :name, "Recipe Name", class: "form-label" %>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, placeholder: "What's it called", class: "form-control" %>
   </div>
 
   <div class="field mb-3">
     <%= f.label :description, class: "form-label" %>
-    <%= f.text_area :description, class: "form-control" %>
+    <%= f.text_area :description, placeholder: "Add a description", class: "form-control" %>
   </div>
 
    <div class="field mb-3" >
     <%= f.label :tag_list, class: "form-label" %>
-    <%= f.text_field :tag_list, class: "form-control" %>
+    <%= f.text_field :tag_list, placeholder: "Add as many tags as you'd like, separate each one with a commas", class: "form-control" %>
   </div>
 
   <div class="field mb-3" >
     <%= f.label :ingredients, class: "form-label" %>
-    <%= f.text_area :ingredients, class: "form-control" %>
+    <%= f.text_area :ingredients, placeholder: "Put each ingredient on its own line", class: "form-control" %>
   </div>
 
   <div class="field mb-3" >
     <%= f.label :instructions, class: "form-label" %>
-    <%= f.text_area :instructions, class: "form-control" %>
+    <%= f.text_area :instructions, placeholder: "Put each step on its own line", class: "form-control" %>
   </div>
 
   <div class="field mb-3">
