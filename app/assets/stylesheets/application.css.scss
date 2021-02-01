@@ -20,6 +20,11 @@ h1, h2, h3 {
    font-family: 'Arimo', sans-serif;
  }
 
+ // Use darker blue for anchor tags for accessibility contrast ratio
+a {
+  color:#090875;
+}
+
  // Navbar styles
  .navbar-dark .navbar-nav .nav-link {
    color: white;
@@ -89,14 +94,17 @@ h3 span {
 .btn-info {
   color: white;
   background-color: #10b8da;
-
-  
 }
 
 .btn-info:hover {
   color: white;
   background-color: #0B8199;
   border-color: #1A93AB
+}
+
+button.btn.btn-primary.related-recipe-button-background {
+  background-color: #110EC2;
+  
 }
 // Color theme
 // /* Color Theme Swatches in Hex */
