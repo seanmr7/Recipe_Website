@@ -20,6 +20,6 @@ From Mishu
   > "Mishu's Recipes" header on profile page
   > picture next to recipe
   > Add dates to cook other people's recipes and have it show on upcoming cooks
-  Done > Fixing profile pictures (Mishu's disappeared)
+  > Fixing profile pictures (Mishu's disappeared)
   Done > Sort tags give option for all recipes or only yours
   > Link to original url
