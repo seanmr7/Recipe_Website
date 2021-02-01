@@ -9,7 +9,7 @@
 <h4><%= current_user.profile.first_name%> <%= current_user.profile.last_name %></h4>
 <h5><%= current_user.profile.username %></h5>
 <p>
-  <%= link_to "Your Recipes", user_path(id: current_user.id)%> |
+  <%= link_to "Recipes", user_path(id: current_user.id)%> |
   <%= link_to "Update Profile", edit_user_profile_path(user_id: current_user.id) %></br>
   <%= link_to "Add a Recipe", new_user_recipe_path(user_id: current_user.id) %>
 </p>
