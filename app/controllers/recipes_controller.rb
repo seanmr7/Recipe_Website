@@ -7,7 +7,7 @@ def index
   @recipes = Recipe.all.includes(:tags, :user)
   if params[:filter_tag]
     @tag = Tag.where('tag_name = ?', params[:filter_tag]).first
-    @recipes = Recipe.joins(:taggings).where(taggings: { tag_id: @tag.id })
+    @recipes = @recipes.filter_by_tag(@tag)
   end
 end
 
@@ -16,7 +16,7 @@ def user_recipes
   @recipes = @user.recipes.includes(:tags)
   if params[:filter_tag]
     @tag = Tag.where('tag_name = ?', params[:filter_tag]).first
-    @recipes = Recipe.joins(:taggings).where(taggings: { tag_id: @tag.id })
+    @recipes = @recipes.filter_by_tag(@tag)
   end
 end
 
