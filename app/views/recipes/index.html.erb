@@ -2,11 +2,15 @@
   <div class="row">
     <% if user_signed_in? %>
       <div class="col-md-2 side-profile">
-        <%= render "users/sidebar" %>
+        <%= render partial: "users/sidebar", object: current_user, as: :user %>
       </div>
       <% end %>
       <div class="col-md-8 offset-md-2">
         <h1>All Recipes</h1>
+        <%= render "filter_bar" %>
+        <% if params[:filter_tag] %>
+          Recipes tagged with: <%= @tag.tag_name %>
+        <% end %>
         <ul class="list-group list-group-flush">
           <%= render partial: "recipe_list", collection: @recipes, as: :recipe%>
         </ul>

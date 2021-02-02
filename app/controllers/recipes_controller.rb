@@ -5,11 +5,19 @@ before_action :only_current_user, only: [:new, :create, :edit, :update, :destroy
 # GET /recipes.json
 def index
   @recipes = Recipe.all.includes(:tags, :user)
+  if params[:filter_tag]
+    @tag = Tag.where('tag_name = ?', params[:filter_tag]).first
+    @recipes = Recipe.joins(:taggings).where(taggings: { tag_id: @tag.id })
+  end
 end
 
 def user_recipes
   @user = User.find(params[:user_id])
   @recipes = @user.recipes.includes(:tags)
+  if params[:filter_tag]
+    @tag = Tag.where('tag_name = ?', params[:filter_tag]).first
+    @recipes = Recipe.joins(:taggings).where(taggings: { tag_id: @tag.id })
+  end
 end
 
 # GET /recipes/1

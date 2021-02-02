@@ -8,6 +8,10 @@
       <div class="col-md-8 offset-md-2">
         <h1>Welcome to the Home Page</h1>
         <h1>Recent Recipes</h1>
+        <%= render "recipes/filter_bar" %>
+        <% if params[:filter_tag] %>
+          Recipes tagged with: <%= @tag.tag_name %>
+        <% end %>
         <ul class="list-group list-group-flush">
           <%= render partial: "recipes/recipe_list", collection: @recipes, as: :recipe %>
         </ul>

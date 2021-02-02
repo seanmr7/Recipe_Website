@@ -1,0 +1,5 @@
+<%= form_with(url: request.original_url, method: :get, local: true, html: {multipart: true}) do |f| %>
+  <%= f.text_field :filter_tag, placeholder: "Tag" %>
+
+  <%= submit_tag 'Filter', name: nil %>
+<% end %>

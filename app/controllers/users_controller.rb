@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @recipes = Recipe.where("user_id = ?", params[:id]).includes(:tags)
-    
+    if params[:filter_tag]
+      @tag = Tag.where('tag_name = ?', params[:filter_tag]).first
+      @recipes = Recipe.joins(:taggings).where(taggings: { tag_id: @tag.id })
+    end
   end
 end

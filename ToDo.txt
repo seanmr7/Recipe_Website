@@ -8,18 +8,20 @@ Recipes
 
 Overall
   Done > Add recipe index view for all recipes in database to be viewable on the homepage.
-  > Add user index so users can find and view other user profiles.
+  Done > Add user index so users can find and view other user profiles.
   > Add email alert for users upcoming to cook recipes. Include ingredient list as shopping list, link to the recipe,
     and date they wanted to cook it.
   Done > Move flash popup so that it is not hidden by the profile sidebar and does not cover the page information.
   Done > Fix profile picture being too large.
   Done > Add eager loading
   Done > Add placeholder text for recipe form
+  > Fix picture for uniform size on upload
 
 From Mishu
-  > "Mishu's Recipes" header on profile page
+  Done > "Mishu's Recipes" header on profile page
   > picture next to recipe
   > Add dates to cook other people's recipes and have it show on upcoming cooks
   > Fixing profile pictures (Mishu's disappeared)
   Done > Sort tags give option for all recipes or only yours
   > Link to original url
+  
