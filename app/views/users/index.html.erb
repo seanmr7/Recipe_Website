@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <% if user_signed_in? %>
+      <div class="col-md-2 side-profile">
+        <%= render "users/sidebar" %>
+      </div>
+      <% end %>
+      <div class="col-md-8 offset-md-2">
+        <h1>CHEFS</h1>
+        <ul class="list-group list-group-flush">
+          <% @users.each do |user| %>
+            <li class="list-group-item <%=cycle "list-group-item", "list-group-item-secondary" %>">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-2 center-text" align="center">
+                    <% if user.profile.avatar.attached? %>
+                        <%= image_tag url_for(user.profile.avatar), class: "w-100 h-100 rounded"%>
+                    <% else %>
+                      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="w-100 h-100 rounded">
+                    <% end %>
+                  </div>
+                  <div class="col-md-10">
+                    <%= link_to user_path(id: user.id) do %>
+                      <h3><%= user.profile.username %></h3>
+                    <% end %>
+                    <p>Most Recent Recipe: <%= link_to user.recipes.last.name, user_recipe_path(user_id: user.id, id: user.recipes.last.id) %></p>
+                    Uploaded: <%= user.recipes.count %> Recipes</br>
+                    Joined in: <%= user.created_at.strftime("%B/%Y") %>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <%= link_to "View all recipes", recipes_path %>
+      </div>
+  </div>
+</div>
