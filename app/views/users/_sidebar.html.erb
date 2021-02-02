@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <% if user.profile.avatar.attached? %>
-      <%= image_tag url_for(user.profile.avatar), class: "profile-picture rounded"%>
+    <%= image_tag url_for(user.profile.avatar), class: "profile-picture rounded"%>
   <% else %>
     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="profile-picture rounded">
   <% end %>
-  </div>
+</div>
     <h4><%= user.profile.first_name%> <%= user.profile.last_name %></h4>
     <h5><%= user.profile.username %></h5>
     <p>
@@ -14,7 +14,5 @@
         <%= link_to "Add a Recipe", new_user_recipe_path(user_id: user.id) %>
       <% end %>
     </p>
-  
-</div>
 
 

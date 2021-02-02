@@ -1,5 +1,6 @@
 <%= form_with(url: request.original_url, method: :get, local: true, html: {multipart: true}) do |f| %>
-  <%= f.text_field :filter_tag, placeholder: "Tag" %>
-
-  <%= submit_tag 'Filter', name: nil %>
+  <div class="d-flex">
+    <%= f.text_field :filter_tag, placeholder: "Tag", required: true, class: "form-control me-1" %>
+    <%= submit_tag 'Filter', name: nil, class: "btn btn-outline-primary" %>
+  </div>
 <% end %>

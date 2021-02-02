@@ -7,13 +7,15 @@
       <% end %>
       <div class="col-md-8 offset-md-2">
         <h1>All Recipes</h1>
-        <%= render "filter_bar" %>
-        <% if params[:filter_tag] %>
-          Recipes tagged with: <%= @tag.tag_name %>
-        <% end %>
         <ul class="list-group list-group-flush">
           <%= render partial: "recipe_list", collection: @recipes, as: :recipe%>
         </ul>
       </div> 
+      <div class="col-md-2">
+        <%= render "recipes/filter_bar" %>
+        <% if params[:filter_tag].present? %>
+          Recipes tagged with: <%= @tag.tag_name %>
+        <% end %>
+      </div>
   </div>
 </div>
