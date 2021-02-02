@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 side-profile">
-        <%= render "users/sidebar" %>
+        <%= render partial: "users/sidebar", object: @user, as: :user %>
     </div>
 
     <div class="col-md-8 offset-md-2">

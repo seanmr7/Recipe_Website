@@ -1,11 +1,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 side-profile">
-      <%= render "users/sidebar" %>
+      <%= render partial: "users/sidebar", object: @recipe.user, as: :user %>
     </div>
     <div class="col-md-8 offset-md-2">
       <h1><%= @recipe.name %></h1> 
-
       <% @recipe.tags.each do |tag| %>
         <% if user_signed_in? %>
           <%= link_to related_recipes_path(user_id: current_user.id, id: tag.id, recipe_id: @recipe.id), class: "tag-anchor" do %>

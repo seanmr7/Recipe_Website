@@ -2,7 +2,7 @@
   <div class="row">
     <% if user_signed_in? %>
       <div class="col-md-2 side-profile">
-        <%= render "users/sidebar" %>
+        <%= render partial: "users/sidebar", object: current_user, as: :user %>
       </div>
       <% end %>
       <div class="col-md-8 offset-md-2">

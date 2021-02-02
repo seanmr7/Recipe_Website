@@ -1,16 +1,20 @@
-<% if user_signed_in? %>
 <div class="container-fluid">
-  <% if current_user.profile.avatar.attached? %>
-      <%= image_tag url_for(current_user.profile.avatar), class: "profile-picture rounded"%>
+  <% if user.profile.avatar.attached? %>
+      <%= image_tag url_for(user.profile.avatar), class: "profile-picture rounded"%>
   <% else %>
-    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="profile-picture rounded-circle">
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="profile-picture rounded">
   <% end %>
+  </div>
+    <h4><%= user.profile.first_name%> <%= user.profile.last_name %></h4>
+    <h5><%= user.profile.username %></h5>
+    <p>
+      <%= link_to "Recipes", user_path(id: user.id)%>
+      <% if user_signed_in? && user.id == current_user.id %>
+       | <%= link_to "Update Profile", edit_user_profile_path(user_id: user.id) %></br>
+        <%= link_to "Add a Recipe", new_user_recipe_path(user_id: user.id) %>
+      <% end %>
+    </p>
+  
 </div>
-<h4><%= current_user.profile.first_name%> <%= current_user.profile.last_name %></h4>
-<h5><%= current_user.profile.username %></h5>
-<p>
-  <%= link_to "Recipes", user_path(id: current_user.id)%> |
-  <%= link_to "Update Profile", edit_user_profile_path(user_id: current_user.id) %></br>
-  <%= link_to "Add a Recipe", new_user_recipe_path(user_id: current_user.id) %>
-</p>
-<% end %>
+
+
