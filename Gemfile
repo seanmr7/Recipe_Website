@@ -46,6 +46,9 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 # Use Devise for user accounts and authentication
 gem 'devise'
 
+# Use AWS S3 for image storage in production
+gem 'aws-sdk-s3'
+
 # User image_processing for transfomring images
 gem 'image_processing', "~> 1.0"
 
@@ -67,7 +70,7 @@ end
 
 group :production do
   # Use the PostgreSQL gem for Heroku production servers
-  gem 'pg', '~> 0.18.4'
+  #gem 'pg', '~> 0.18.4'
 end
 group :test do
   # Adds support for Capybara system testing and selenium driver
