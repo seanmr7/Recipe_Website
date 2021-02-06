@@ -24,7 +24,7 @@
         </div>
       <% else %>
         <div class="col-md-2 align-self-center">
-          <%= link_to root_path, class: "btn btn-info align middle" do %>
+          <%= link_to user_path(id: recipe.user.id), class: "btn btn-info align middle" do %>
             Added by: <%= recipe.user.profile.username %>
           <%end %>
         </div>
