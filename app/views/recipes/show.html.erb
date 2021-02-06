@@ -28,14 +28,14 @@
       <p><%= @recipe.description %></p>
       
       <h3>Ingredients</h3>
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush ingredients-instructions-list">
         <% prep_ingredient_list(@recipe.ingredients).each do |ingredient| %>
             <li class="list-group-item"><%= ingredient %><li>
         <% end %>
       </ul>
 
       <h3>Instructions</h3>
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush ingredients-instructions-list">
         <% prep_ingredient_list(@recipe.instructions).each do |step| %>
             <li class="list-group-item"><%= step %><li>
         <% end %>
