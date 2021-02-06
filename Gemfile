@@ -47,7 +47,7 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'devise'
 
 # Use AWS S3 for image storage in production
-#gem 'aws-sdk-s3'
+gem 'aws-sdk-s3'
 
 # User image_processing for transfomring images
 gem 'image_processing', "~> 1.0"
