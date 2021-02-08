@@ -18,6 +18,7 @@ Overall
   Done > Add placeholder text for recipe form
   > Fix picture for uniform size on upload
   > Revise recipe show view to only show "cook on" if the date has not passed
+  
 From Mishu
   Done > "Mishu's Recipes" header on profile page
   > picture next to recipe

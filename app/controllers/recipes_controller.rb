@@ -91,6 +91,8 @@ private
       :rating, 
       :user_id, 
       :cook_by_date,
+      :url,
+      :recipe_picture,
       :tag_list,
       :ingredients, 
       :instructions

@@ -16,9 +16,12 @@
           <% end %>
         <% end %>
       <% end %>
-        
       <% if user_signed_in? && @recipe.user == current_user %>
-        <p>Your Recipe</p>
+        <p>Your Recipe
+          <% if @recipe.url %>
+            | Originally found <%= link_to "here", @recipe.url %>
+          <% end %>
+        </p>
       <% else %>
         <p>Added by <%= @recipe.user.profile.username %></p>
       <% end %>
@@ -41,9 +44,19 @@
         <% end %>
       </ul>
 
+      
+
 
       <%= link_to 'Edit', edit_user_recipe_path(user_id: params[:user_id], id: @recipe) %> |
       <%= link_to 'Back', user_path(id: params[:user_id]) %>
+    </div>
+
+    <div class="col-md-2">
+      <% if @recipe.recipe_picture.attached? %>
+        <%= image_tag url_for(@recipe.recipe_picture), class: "profile-picture rounded" %>
+      <% else %>
+        <%= "You eat with your eyes! Add a picture!" %>
+      <% end %>
     </div>
   </div>
 </div>

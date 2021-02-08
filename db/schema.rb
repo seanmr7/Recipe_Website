@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_023807) do
+ActiveRecord::Schema.define(version: 2021_02_08_231744) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_01_29_023807) do
     t.datetime "cook_by_date"
     t.string "ingredients"
     t.string "instructions"
+    t.text "url"
   end
 
   create_table "taggings", force: :cascade do |t|

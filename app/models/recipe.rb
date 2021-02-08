@@ -2,6 +2,7 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :taggings
   has_many :tags, through: :taggings
+  has_one_attached :recipe_picture
 
   validates :name, presence: true
   validates :ingredients, presence: true
