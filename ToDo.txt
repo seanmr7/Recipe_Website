@@ -21,9 +21,9 @@ Overall
   
 From Mishu
   Done > "Mishu's Recipes" header on profile page
-  > picture next to recipe
+  Done > picture next to recipe
   > Add dates to cook other people's recipes and have it show on upcoming cooks
-  > Fixing profile pictures (Mishu's disappeared)
+  Done > Fixing profile pictures (Mishu's disappeared) - Added S3 for image storage on production to fix.
   Done > Sort tags give option for all recipes or only yours
-  > Link to original url
+  Done > Link to original url
   

@@ -27,7 +27,7 @@
       <% else %>
         <p>Added by <%= @recipe.user.profile.username %></p>
       <% end %>
-      <% if @recipe.cook_by_date %>
+      <% if @recipe.cook_by_date && @recipe.cook_by_date > Date.today %>
         <p>Cook on: <%= @recipe.cook_by_date.strftime("%A %m/%d/%Y") %></p>
       <% end %>
       <p><%= @recipe.description %></p>

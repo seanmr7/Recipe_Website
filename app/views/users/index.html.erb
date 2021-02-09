@@ -14,18 +14,22 @@
                 <div class="row">
                   <div class="col-md-2 center-text" align="center">
                     <% if user.profile.avatar.attached? %>
-                        <%= image_tag url_for(user.profile.avatar), class: "w-100 h-100 rounded"%>
+                        <%= image_tag(url_for(user.profile.avatar), size: "175x175", class: "profile-picture rounded") %>
                     <% else %>
-                      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="w-100 h-100 rounded">
+                      <%= image_tag("default/default-profile.png", class: "profile-picture rounded-circle")%>
                     <% end %>
                   </div>
                   <div class="col-md-10">
                     <%= link_to user_path(id: user.id) do %>
                       <h3><%= user.profile.username %></h3>
                     <% end %>
-                    <p>Most Recent Recipe: <%= link_to user.recipes.last.name, user_recipe_path(user_id: user.id, id: user.recipes.last.id) %></p>
-                    Uploaded: <%= user.recipes.count %> Recipes</br>
-                    Joined in: <%= user.created_at.strftime("%B/%Y") %>
+                    <% if user.recipes.empty? %>
+                      <p>No recipes added<p>
+                    <% else %>
+                      <p>Most Recent Recipe: <%= link_to user.recipes.last.name, user_recipe_path(user_id: user.id, id: user.recipes.last.id) %></p>
+                      Uploaded: <%= user.recipes.count %> Recipes</br>
+                    <% end %>
+                    Joined in: <%= user.created_at.strftime("%B %Y") %>
                   </div>
                 </div>
               </div>
