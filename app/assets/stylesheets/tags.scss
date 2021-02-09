@@ -1,0 +1,17 @@
+// CSS style rules for tags.
+
+.tag-anchor {
+  color:white;
+  text-decoration: none;
+  :hover {
+    color: rgba(255, 255, 255, 0.822);
+  }
+}
+
+.tags-background {
+  background-color: #513779;
+}
+
+span.badge.rounded-pill.tags-background:hover {
+  background-color: #967ECB;
+}

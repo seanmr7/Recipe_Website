@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <% if user.profile.avatar.attached? %>
-    <%= image_tag url_for(user.profile.avatar), class: "profile-picture rounded"%>
+    <%= image_tag(url_for(user.profile.avatar), size: "250x250", class: "profile-picture rounded-circle")%>
   <% else %>
-    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="profile-picture rounded">
+    <%= image_tag("default/default-profile.png", size: "250x250", class: "profile-picture rounded-circle")%>
   <% end %>
 </div>
     <h4><%= user.profile.first_name%> <%= user.profile.last_name %></h4>

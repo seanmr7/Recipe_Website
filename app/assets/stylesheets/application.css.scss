@@ -59,34 +59,6 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
   width: 100%;
 }
 
-.home-page-recipes {
-  padding-left: 0;
-}
-
-.home-page-username {
-  padding-top: .75rem;
-}
-
-.home-page-recipe {
-  padding-top: 1rem;
-}
-
-.tag-anchor {
-  color:white;
-  text-decoration: none;
-  :hover {
-    color: rgba(255, 255, 255, 0.822);
-  }
-}
-
-.tags-background {
-  background-color: #513779;
-}
-
-span.badge.rounded-pill.tags-background:hover {
-  background-color: #967ECB;
-}
-
 h3 span {
   font-size: .75;
 }
@@ -107,9 +79,7 @@ button.btn.btn-primary.related-recipe-button-background {
   
 }
 
-.ingredients-instructions-list {
-  list-style-type: none;
-}
+
 // Color theme
 // /* Color Theme Swatches in Hex */
 // .Royal-Blurple-1-hex { color: #220B5E; }
