@@ -6,7 +6,8 @@ Recipes
   Done > Allow user to filter recipe index by tags.
   > Add comments to recipes model, view, controller.
   > Review how recipe ingredients and instructions are stored in database, is there a better/more efficient way to store and retrieve them?
-
+  > Convert ingredeints and instructions to text instead of string in database
+  
 Overall
   Done > Add recipe index view for all recipes in database to be viewable on the homepage.
   Done > Add user index so users can find and view other user profiles.
