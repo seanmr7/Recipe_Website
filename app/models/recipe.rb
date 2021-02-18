@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
   has_many :tags, through: :taggings
   has_one_attached :recipe_picture
 
+  has_many :ingredients
+
   validates :name, presence: true
   validates :ingredients, presence: true
   validates :instructions, presence: true
