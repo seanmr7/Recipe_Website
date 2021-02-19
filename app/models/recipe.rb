@@ -5,12 +5,13 @@ class Recipe < ApplicationRecord
   has_one_attached :recipe_picture
 
   has_many :ingredients
+  accepts_nested_attributes_for :ingredients
 
   validates :name, presence: true
-  validates :ingredients, presence: true
+  #validates :ingredients, presence: true
   validates :instructions, presence: true
   #before_save :normalize_ingredients, :normalize_instructions
-  serialize :ingredients
+  #serialize :ingredients
   serialize :instructions
 
   def self.filter_by_tag(tag)

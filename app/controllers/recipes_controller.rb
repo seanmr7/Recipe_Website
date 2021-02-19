@@ -29,11 +29,13 @@ end
 def new
   @user = User.find(params[:user_id])
   @recipe = Recipe.new
+  @recipe.ingredients.build
 end
 
 # GET /recipes/1/edit
 def edit
   @user = User.find(params[:user_id])
+  @recipe.ingredients.build
 end
 
 # POST /recipes
@@ -93,9 +95,9 @@ private
       :cook_by_date,
       :url,
       :recipe_picture,
-      :tag_list,
-      :ingredients, 
-      :instructions
+      :tag_list, 
+      :instructions,
+      ingredients_attributes: [:ingredient, :_destroy]
     )
   end
 

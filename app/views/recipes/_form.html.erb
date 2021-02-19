@@ -26,14 +26,18 @@
     <%= f.text_area :description, placeholder: "Add a description", class: "form-control" %>
   </div>
 
-   <div class="field mb-3" >
+  <div class="field mb-3" >
     <%= f.label :tag_list, class: "form-label" %>
     <%= f.text_field :tag_list, placeholder: "Add as many tags as you'd like, separate each one with a commas", class: "form-control" %>
   </div>
 
-  <div class="field mb-3" >
-    <%= f.label :ingredients, class: "form-label" %>
-    <%= f.text_area :ingredients, placeholder: "Put each ingredient on its own line", class: "form-control" %>
+  
+  <div class="ingredient-field field mb-3">
+    <%= f.label "Ingredients", class: "form-label"%>
+    <%= f.fields_for :ingredients do |builder| %>
+      <%= render 'ingredient', f: builder %>
+    <% end %><br>
+    <%= link_to_add_row('Add Ingredient', f, :ingredients, class: "btn btn-primary")%>
   </div>
 
   <div class="field mb-3" >
