@@ -36,9 +36,9 @@
     <%= f.label "Ingredients", class: "form-label"%>
     <%= f.fields_for :ingredients do |builder| %>
       <%= render 'ingredient', f: builder %>
-    <% end %><br>
-    <%= link_to_add_row('Add Ingredient', f, :ingredients, class: "btn btn-primary")%>
+    <% end %>
   </div>
+  <%= link_to_add_row('Add Ingredient', f, :ingredients, class: "btn btn-primary")%>
 
   <div class="field mb-3" >
     <%= f.label :instructions, class: "form-label" %>
