@@ -23,6 +23,7 @@ end
 # GET /recipes/1
 # GET /recipes/1.json
 def show
+  @recipe = Recipe.includes(:ingredients, :tags).find(params[:id])
 end
 
 # GET /recipes/new
