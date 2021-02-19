@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
   has_many :tags, through: :taggings
   has_one_attached :recipe_picture
 
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients
 
   validates :name, presence: true
