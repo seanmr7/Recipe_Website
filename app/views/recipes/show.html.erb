@@ -41,8 +41,8 @@
 
       <h3>Instructions</h3>
       <ul class="list-group list-group-flush ingredients-instructions-list">
-        <% prep_ingredient_list(@recipe.instructions).each do |step| %>
-            <li class="list-group-item"><%= step %><li>
+        <% @recipe.instructions.each do |step| %>
+            <li class="list-group-item"><%= step.body %><li>
         <% end %>
       </ul>
 
