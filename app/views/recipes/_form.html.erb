@@ -32,18 +32,22 @@
   </div>
 
   
-  <div class="ingredient-field field mb-3">
+  <div class="ingredient-field field mb-1">
     <%= f.label "Ingredients", class: "form-label"%>
     <%= f.fields_for :ingredients do |builder| %>
       <%= render 'ingredient', f: builder %>
     <% end %>
   </div>
-  <%= link_to_add_row('Add Ingredient', f, :ingredients, class: "btn btn-primary")%>
+  <%= link_to_add_row('Add Ingredient', f, :ingredients, class: "btn btn-primary mb-2")%>
 
-  <div class="field mb-3" >
-    <%= f.label :instructions, class: "form-label" %>
-    <%= f.text_area :instructions, placeholder: "Put each step on its own line", class: "form-control" %>
+
+  <div class="instruction-field field mb-3">
+    <%= f.label "Instructions", class: "form-label"%>
+    <%= f.fields_for :instructions do |builder| %>
+      <%= render 'instruction', f: builder %>
+    <% end %>
   </div>
+  <%= link_to_add_row('Add Step', f, :instructions, class: "btn btn-primary")%>
 
   <div class="field mb-3">
     <%= f.label :recipe_picture, "Picture", class: "form-label" %>

@@ -33,10 +33,14 @@ $(document).on('turbolinks:load', function() {
 
   $('form').on('click', '.add_fields', function(event) {
     var regexp, time;
-    attached_to = $(this).prev()
+    container = $(this).prev()
     time = new Date().getTime();
     regexp = new RegExp($(this).data('id'), 'g');
+    if (container.hasClass('ingredient-field')) {
     $('.ingredient-field').append($(this).data('fields').replace(regexp, time));
+    } else {
+      $('.instruction-field').append($(this).data('fields').replace(regexp, time));
+    }
     return event.preventDefault();
   });
 });
